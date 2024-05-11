@@ -3,7 +3,7 @@
 ## Description
 Welcome to EcoShare! 🌻
 
-This project is a marketplace platform designed to showcase products from sustainable suppliers. The frontend is built using Angular, while the backend utilizes a .NET API with SQL Server as the database. [Check back-end implementation here!](https://github.com/natalia-coelho/ecoshare-backend)😊
+This project is a marketplace platform designed to showcase products from sustainable suppliers. The frontend is built using Angular, while the backend utilizes a .NET API with SQL Server as the database. [Check back-end implementation here.](https://github.com/natalia-coelho/ecoshare-backend)😊
 ## Setup Instructions
 
 To run the program locally, follow these steps:
