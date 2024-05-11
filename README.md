@@ -3,39 +3,27 @@
 ## Description
 Welcome to EcoShare! 🌻
 
-This project is a marketplace platform designed to showcase products from sustainable suppliers. The frontend is built using Angular, while the backend utilizes a .NET API with SQL Server as the database. [(Click here to see the back-end implementation)](https://github.com/natalia-coelho/ecoshare-backend)😊
+This project is a marketplace platform designed to showcase products from sustainable suppliers. The frontend is built using Angular, while the backend utilizes a .NET API with SQL Server as the database. [Check back-end implementation here!](https://github.com/natalia-coelho/ecoshare-backend)😊
 ## Setup Instructions
 
 To run the program locally, follow these steps:
 
 1. **Clone the Repository:**
-    
-    bash
-    
-    Copy code
-    
-    `git clone <repository-url>`
-    
 2. **Navigate to the Project Directory:**
-    
-    bash
-    
-    Copy code
-    
-    `cd sustainable-marketplace-frontend`
-    
+``` bash
+cd sustainable-marketplace-frontend
+```
+
 3. **Install Dependencies:**
-    
-    Copy code
-    
-    `npm install`
-    
+``` bash
+npm install
+```
+
 4. **Start the Development Server:**
-    
-    Copy code
-    
-    `ng serve`
-    
+``` bash 
+ng serve
+```
+
 5. **Open in Browser:**  
     Navigate to `http://localhost:4200/` in your web browser to view the application.
     
