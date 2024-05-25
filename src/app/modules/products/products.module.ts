@@ -18,4 +18,5 @@ import { ProductFormComponent } from './product-form/product-form.component';
     ProductsRoutingModule
   ]
 })
+  
 export class ProductsModule { }
