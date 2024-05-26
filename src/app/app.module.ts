@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { authenticationInterceptor } from './services/authenticationInterceptor';
+import { ProductDetailsComponent } from './pages/products/product-details/product-details.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { authenticationInterceptor } from './services/authenticationInterceptor'
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
+    ProductDetailsComponent,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

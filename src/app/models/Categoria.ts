@@ -1,3 +1,3 @@
-export interface Categoria {
+export class Categoria {
     // Defina as propriedades da categoria, se necessário
 }

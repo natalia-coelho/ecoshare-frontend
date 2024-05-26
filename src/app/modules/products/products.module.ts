@@ -5,6 +5,7 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { Produto } from 'src/app/models/Produto';
 
 
 @NgModule({
@@ -18,5 +19,7 @@ import { ProductFormComponent } from './product-form/product-form.component';
     ProductsRoutingModule
   ]
 })
-  
-export class ProductsModule { }
+
+export class ProductsModule {
+}
+

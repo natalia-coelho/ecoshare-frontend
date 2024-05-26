@@ -1,7 +1,7 @@
 import { Categoria } from "./Categoria";
 import { Fornecedor } from "./Fornecedor";
 
-export interface Produto {
+export class Produto {
     produtoId: number;
     nome: string;
     preco: number;
