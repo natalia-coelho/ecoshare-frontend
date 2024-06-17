@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component, NgModule, OnInit } from '@angular/core';
+import { ComponentsModule } from 'src/app/components/components.module';
 import { Produto } from 'src/app/models/Produto';
 import { ProductService } from 'src/app/services/product.service';
 

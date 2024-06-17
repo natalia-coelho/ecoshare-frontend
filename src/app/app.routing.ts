@@ -5,17 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
-import { ProductsComponent } from './pages/products/products.component';
 import { LoginComponent } from './pages/login/login.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { ProductDetailsComponent } from './pages/products/product-details/product-details.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full', },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full', }, // trocar para not found
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'product-detail/:id', component: ProductDetailsComponent },
-  // { path: 'products', component: ProductsComponent },
   {
     path: '',
     component: AdminLayoutComponent,
@@ -37,7 +32,17 @@ const routes: Routes = [
   }, {
     path: '**',
     redirectTo: 'dashboard'
-  }
+  },
+  // {
+  //   path: '',
+  //   component: ProductsComponent,
+  //   children: [
+  //     {
+  //       path: '',
+  //       loadChildren: () => import('src/app/pages/products/products.module').then(m => m.ProductsModule)
+  //     }
+  //   ]
+  // }
 ];
 
 @NgModule({

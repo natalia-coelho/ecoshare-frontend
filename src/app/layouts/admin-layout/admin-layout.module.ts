@@ -12,8 +12,7 @@ import { MapsComponent } from '../../pages/maps/maps.component';
 import { UserProfileComponent } from '../../pages/user-profile/user-profile.component';
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ProductsComponent } from 'src/app/pages/products/products.component';
-// import { ToastrModule } from 'ngx-toastr';
+import { ProductsModule } from 'src/app/pages/products/products.module';
 
 @NgModule({
   imports: [
@@ -22,7 +21,8 @@ import { ProductsComponent } from 'src/app/pages/products/products.component';
     FormsModule,
     HttpClientModule,
     NgbModule,
-    ClipboardModule
+    ClipboardModule,
+    ProductsModule
   ],
   declarations: [
     DashboardComponent,
@@ -30,7 +30,6 @@ import { ProductsComponent } from 'src/app/pages/products/products.component';
     TablesComponent,
     IconsComponent,
     MapsComponent,
-    ProductsComponent
   ]
 })
 
