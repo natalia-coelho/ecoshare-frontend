@@ -31,8 +31,8 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   atualizarProduto(): void {
-    this.router.navigate(['/product-update', this.product.id]);
-  }
+    this.router.navigate(['/product-update', this.product.produtoId]);
+  };
 
   removerProduto(): void {
     if (confirm('Tem certeza que deseja remover este produto?')) {

@@ -8,6 +8,7 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from './products.component';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductUpdateComponent } from './product-update/product-update.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     // ProductListComponent,
     ProductsComponent,
     ProductDetailsComponent,
+    ProductUpdateComponent,
     // ProductFormComponent
   ],
   imports: [

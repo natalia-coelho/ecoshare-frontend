@@ -7,6 +7,7 @@ import { UserProfileComponent } from '../../pages/user-profile/user-profile.comp
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { ProductsComponent } from 'src/app/pages/products/products.component';
 import { ProductDetailsComponent } from 'src/app/pages/products/product-details/product-details.component';
+import { ProductUpdateComponent } from 'src/app/pages/products/product-update/product-update.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
@@ -16,4 +17,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps', component: MapsComponent },
     { path: 'products', component: ProductsComponent },
     { path: 'product-detail/:id', component: ProductDetailsComponent },
+    { path: 'product-update/:id', component: ProductUpdateComponent },
 ];
