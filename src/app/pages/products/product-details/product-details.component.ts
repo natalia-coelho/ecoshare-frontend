@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from 'src/app/models/Produto';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -8,10 +8,12 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss']
 })
+
 export class ProductDetailsComponent implements OnInit {
   product: any;
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private productService: ProductService
   ) { }
 
@@ -26,6 +28,19 @@ export class ProductDetailsComponent implements OnInit {
         console.error('Error fetching product:', error);
       }
     );
+  }
+
+  atualizarProduto(): void {
+    this.router.navigate(['/product-update', this.product.id]);
+  }
+
+  removerProduto(): void {
+    if (confirm('Tem certeza que deseja remover este produto?')) {
+      this.productService.deleteProduct(this.product.id).subscribe(() => {
+        alert('Produto removido com sucesso!');
+        (<any>this.router).navigate(['/produtos']);
+      });
+    }
   }
 }
 
