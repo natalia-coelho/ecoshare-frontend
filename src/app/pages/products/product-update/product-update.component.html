@@ -1,1 +1,98 @@
-<p>product-update works!</p>
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+    style="min-height: 600px; background-size: cover; background-position: center top; background-image: url('your-background-image.jpg');">
+    <span class="mask bg-gradient-primary opacity-8"></span>
+    <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+            <div class="col-lg-7 col-md-10">
+                <h1 class="display-2 text-white">{{ product.nome }}</h1>
+                <p class="text-white mt-0 mb-5">Check out the details of the
+                    selected product.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card bg-secondary shadow">
+                <div class="card-header bg-white border-0">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h3 class="mb-0">Product Details</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12 mb-4">
+                            <div class="card">
+                                <img [src]="product.imagemProduto"
+                                    class="card-img-top img-fluid"
+                                    alt="Product Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.nome
+                                        }}</h5>
+                                    <h5 class="card-title">$ {{ product.preco
+                                        }}</h5>
+                                    <p class="card-text">{{ product.descricao
+                                        }}</p>
+
+                                    <div
+                                        class="mt-4 d-flex justify-content-between">
+                                        <button class="btn btn-primary"
+                                            (click)="atualizarProduto()">Update
+                                            Product</button>
+                                        <button class="btn btn-danger ml-2"
+                                            (click)="removerProduto()">Remove
+                                            Product</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h4 class="mb-3">Update Product Information</h4>
+                            <form>
+                                <div class="form-group">
+                                    <label for="productName">Product
+                                        Name</label>
+                                    <input type="text" class="form-control"
+                                        id="productName"
+                                        [(ngModel)]="product.nome"
+                                        name="productName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="productPrice">Product
+                                        Price</label>
+                                    <input type="number" class="form-control"
+                                        id="productPrice"
+                                        [(ngModel)]="product.preco"
+                                        name="productPrice">
+                                </div>
+                                <div class="form-group">
+                                    <label for="productDescription">Product
+                                        Description</label>
+                                    <textarea class="form-control"
+                                        id="productDescription" rows="3"
+                                        [(ngModel)]="product.descricao"
+                                        name="productDescription"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productImage">Product Image
+                                        URL</label>
+                                    <input type="text" class="form-control"
+                                        id="productImage"
+                                        [(ngModel)]="product.imagemProduto"
+                                        name="productImage">
+                                </div>
+                                <button type="submit"
+                                    class="btn btn-success">Save
+                                    Changes</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
