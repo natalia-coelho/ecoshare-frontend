@@ -36,7 +36,7 @@ export class ProductDetailsComponent implements OnInit {
 
   removerProduto(): void {
     if (confirm('Tem certeza que deseja remover este produto?')) {
-      this.productService.deleteProduct(this.product.id).subscribe(() => {
+      this.productService.deleteProduct(this.product.produtoId).subscribe(() => {
         alert('Produto removido com sucesso!');
         (<any>this.router).navigate(['/produtos']);
       });

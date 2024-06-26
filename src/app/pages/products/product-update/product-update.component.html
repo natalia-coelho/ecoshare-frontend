@@ -5,8 +5,8 @@
         <div class="row">
             <div class="col-lg-7 col-md-10">
                 <h1 class="display-2 text-white">{{ product.nome }}</h1>
-                <p class="text-white mt-0 mb-5">Check out the details of the
-                    selected product.</p>
+                <p class="text-white mt-0 mb-5">Confira os detalhes do produto
+                    selecionado.</p>
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@
                 <div class="card-header bg-white border-0">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h3 class="mb-0">Product Details</h3>
+                            <h3 class="mb-0">Detalhes do Produto</h3>
                         </div>
                     </div>
                 </div>
@@ -29,11 +29,11 @@
                             <div class="card">
                                 <img [src]="product.imagemProduto"
                                     class="card-img-top img-fluid"
-                                    alt="Product Image">
+                                    alt="Imagem do Produto">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ product.nome
                                         }}</h5>
-                                    <h5 class="card-title">$ {{ product.preco
+                                    <h5 class="card-title">R$ {{ product.preco
                                         }}</h5>
                                     <p class="card-text">{{ product.descricao
                                         }}</p>
@@ -41,53 +41,54 @@
                                     <div
                                         class="mt-4 d-flex justify-content-between">
                                         <button class="btn btn-primary"
-                                            (click)="atualizarProduto()">Update
-                                            Product</button>
+                                            (click)="atualizarProduto()">Atualizar
+                                            Produto</button>
                                         <button class="btn btn-danger ml-2"
-                                            (click)="removerProduto()">Remove
-                                            Product</button>
+                                            (click)="removerProduto()">Remover
+                                            Produto</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <h4 class="mb-3">Update Product Information</h4>
+                            <h4 class="mb-3">Atualizar Informações do
+                                Produto</h4>
                             <form>
                                 <div class="form-group">
-                                    <label for="productName">Product
-                                        Name</label>
+                                    <label for="productName">Nome do
+                                        Produto</label>
                                     <input type="text" class="form-control"
                                         id="productName"
                                         [(ngModel)]="product.nome"
                                         name="productName">
                                 </div>
                                 <div class="form-group">
-                                    <label for="productPrice">Product
-                                        Price</label>
+                                    <label for="productPrice">Preço do
+                                        Produto</label>
                                     <input type="number" class="form-control"
                                         id="productPrice"
                                         [(ngModel)]="product.preco"
                                         name="productPrice">
                                 </div>
                                 <div class="form-group">
-                                    <label for="productDescription">Product
-                                        Description</label>
+                                    <label for="productDescription">Descrição do
+                                        Produto</label>
                                     <textarea class="form-control"
                                         id="productDescription" rows="3"
                                         [(ngModel)]="product.descricao"
                                         name="productDescription"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="productImage">Product Image
-                                        URL</label>
+                                    <label for="productImage">URL da Imagem do
+                                        Produto</label>
                                     <input type="text" class="form-control"
                                         id="productImage"
                                         [(ngModel)]="product.imagemProduto"
                                         name="productImage">
                                 </div>
                                 <button type="submit"
-                                    class="btn btn-success">Save
-                                    Changes</button>
+                                    class="btn btn-success">Salvar
+                                    Alterações</button>
                             </form>
                         </div>
                     </div>
