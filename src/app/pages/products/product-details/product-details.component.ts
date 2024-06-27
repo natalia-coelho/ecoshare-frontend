@@ -38,9 +38,8 @@ export class ProductDetailsComponent implements OnInit {
     if (confirm('Tem certeza que deseja remover este produto?')) {
       this.productService.deleteProduct(this.product.produtoId).subscribe(() => {
         alert('Produto removido com sucesso!');
-        (<any>this.router).navigate(['/produtos']);
+        this.router.navigate(['/products']);
       });
     }
   }
 }
-

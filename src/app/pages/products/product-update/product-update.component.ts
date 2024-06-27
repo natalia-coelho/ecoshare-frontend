@@ -37,7 +37,7 @@ export class ProductUpdateComponent implements OnInit {
     this.productService.updateProduct(this.product.produtoId, this.product).subscribe(
       updatedProduct => {
         alert('Produto atualizado com sucesso!');
-        // this.router.navigate(['/produtos']);
+        this.router.navigate(['/products']);
       },
       error => {
         console.error('Error updating product:', error);
@@ -50,7 +50,7 @@ export class ProductUpdateComponent implements OnInit {
     if (confirm('Tem certeza que deseja remover este produto?')) {
       this.productService.deleteProduct(this.product.produtoId).subscribe(() => {
         alert('Produto removido com sucesso!');
-        (<any>this.router).navigate(['/produtos']);
+        (<any>this.router).navigate(['/products']);
       });
     }
   }
