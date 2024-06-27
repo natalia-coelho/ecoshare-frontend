@@ -34,12 +34,21 @@ export class ProductUpdateComponent implements OnInit {
   }
 
   atualizarProduto(): void {
-    this.router.navigate(['/product-update', this.product.produtoId]);
-  };
+    this.productService.updateProduct(this.product.produtoId, this.product).subscribe(
+      updatedProduct => {
+        alert('Produto atualizado com sucesso!');
+        // this.router.navigate(['/produtos']);
+      },
+      error => {
+        console.error('Error updating product:', error);
+        alert('Erro ao atualizar produto.');
+      }
+    );
+  }
 
   removerProduto(): void {
     if (confirm('Tem certeza que deseja remover este produto?')) {
-      this.productService.deleteProduct(this.product.id).subscribe(() => {
+      this.productService.deleteProduct(this.product.produtoId).subscribe(() => {
         alert('Produto removido com sucesso!');
         (<any>this.router).navigate(['/produtos']);
       });

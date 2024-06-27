@@ -18,80 +18,51 @@
             <div class="card bg-secondary shadow">
                 <div class="card-header bg-white border-0">
                     <div class="row align-items-center">
-                        <div class="col-8">
-                            <h3 class="mb-0">Detalhes do Produto</h3>
+                        <div class="col">
+                            <h3 class="mb-0">Atualizar Informações do
+                                Produto</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12 mb-4">
-                            <div class="card">
-                                <img [src]="product.imagemProduto"
-                                    class="card-img-top img-fluid"
-                                    alt="Imagem do Produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ product.nome
-                                        }}</h5>
-                                    <h5 class="card-title">R$ {{ product.preco
-                                        }}</h5>
-                                    <p class="card-text">{{ product.descricao
-                                        }}</p>
-
-                                    <div
-                                        class="mt-4 d-flex justify-content-between">
-                                        <button class="btn btn-primary"
-                                            (click)="atualizarProduto()">Atualizar
-                                            Produto</button>
-                                        <button class="btn btn-danger ml-2"
-                                            (click)="removerProduto()">Remover
-                                            Produto</button>
-                                    </div>
-                                </div>
-                            </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="productName">Nome do Produto</label>
+                            <input type="text" class="form-control"
+                                id="productName" [(ngModel)]="product.nome"
+                                name="productName">
                         </div>
-                        <div class="col-md-12">
-                            <h4 class="mb-3">Atualizar Informações do
-                                Produto</h4>
-                            <form>
-                                <div class="form-group">
-                                    <label for="productName">Nome do
-                                        Produto</label>
-                                    <input type="text" class="form-control"
-                                        id="productName"
-                                        [(ngModel)]="product.nome"
-                                        name="productName">
-                                </div>
-                                <div class="form-group">
-                                    <label for="productPrice">Preço do
-                                        Produto</label>
-                                    <input type="number" class="form-control"
-                                        id="productPrice"
-                                        [(ngModel)]="product.preco"
-                                        name="productPrice">
-                                </div>
-                                <div class="form-group">
-                                    <label for="productDescription">Descrição do
-                                        Produto</label>
-                                    <textarea class="form-control"
-                                        id="productDescription" rows="3"
-                                        [(ngModel)]="product.descricao"
-                                        name="productDescription"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="productImage">URL da Imagem do
-                                        Produto</label>
-                                    <input type="text" class="form-control"
-                                        id="productImage"
-                                        [(ngModel)]="product.imagemProduto"
-                                        name="productImage">
-                                </div>
-                                <button type="submit"
-                                    class="btn btn-success">Salvar
-                                    Alterações</button>
-                            </form>
+                        <div class="form-group">
+                            <label for="productPrice">Preço do Produto</label>
+                            <input type="number" class="form-control"
+                                id="productPrice" [(ngModel)]="product.preco"
+                                name="productPrice">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="productDescription">Descrição do
+                                Produto</label>
+                            <textarea class="form-control"
+                                id="productDescription" rows="3"
+                                [(ngModel)]="product.descricao"
+                                name="productDescription"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="productImage">URL da Imagem do
+                                Produto</label>
+                            <input type="text" class="form-control"
+                                id="productImage"
+                                [(ngModel)]="product.imagemProduto"
+                                name="productImage">
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-success"
+                                (click)="atualizarProduto()">Salvar
+                                Alterações</button>
+                            <button type="button" class="btn btn-danger"
+                                (click)="removerProduto()">Remover
+                                Produto</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
