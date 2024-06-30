@@ -10,6 +10,7 @@ import { ProductDetailsComponent } from 'src/app/pages/products/product-details/
 import { ProductUpdateComponent } from 'src/app/pages/products/product-update/product-update.component';
 import { ProductAddComponent } from 'src/app/pages/products/product-add/product-add.component';
 import { SupplierViewComponent } from 'src/app/pages/suppliers/supplier-view/supplier-view.component';
+import { SupplierAddComponent } from 'src/app/pages/suppliers/supplier-add/supplier-add.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
@@ -24,5 +25,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'product-add', component: ProductAddComponent },
 
     { path: 'supplier-view', component: SupplierViewComponent },
-
+    { path: 'supplier-add', component: SupplierAddComponent },
 ];

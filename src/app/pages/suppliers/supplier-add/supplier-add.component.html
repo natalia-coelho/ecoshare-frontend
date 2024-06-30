@@ -1,0 +1,97 @@
+<!-- Header Section -->
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+    style="min-height: 600px; background-image: url(assets/img/theme/supplier-cover.jpg); background-size: cover; background-position: center top;">
+    <!-- Mask -->
+    <span class="mask bg-gradient-info opacity-8"></span>
+    <!-- Header container -->
+    <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+            <div class="col-lg-7 col-md-10">
+                <h1 class="display-2 text-white">Adicionar Fornecedor</h1>
+                <p class="text-white mt-0 mb-5">Preencha os dados do novo
+                    fornecedor abaixo.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Supplier Insert Form Section -->
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div class="col-xl-8 mb-5 mb-xl-0 mx-auto">
+            <div class="card shadow">
+                <div class="card-header text-white">
+                    <h3 class="mb-0">Novo Fornecedor</h3>
+                </div>
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="razaoSocial">Razão Social</label>
+                            <input type="text" class="form-control"
+                                id="razaoSocial"
+                                [(ngModel)]="fornecedor.razaoSocial"
+                                name="razaoSocial" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nomeFantasia">Nome Fantasia</label>
+                            <input type="text" class="form-control"
+                                id="nomeFantasia"
+                                [(ngModel)]="fornecedor.nomeFantasia"
+                                name="nomeFantasia" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tipo de Pessoa</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio"
+                                    id="pessoaFisica" name="tipoPessoa"
+                                    [(ngModel)]="fornecedor.tipoPessoa"
+                                    [value]="'PessoaFisica'" required>
+                                <label class="form-check-label"
+                                    for="pessoaFisica">Pessoa Física</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio"
+                                    id="pessoaJuridica" name="tipoPessoa"
+                                    [(ngModel)]="fornecedor.tipoPessoa"
+                                    [value]="'PessoaJuridica'" required>
+                                <label class="form-check-label"
+                                    for="pessoaJuridica">Pessoa Jurídica</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cpfCnpj">CPF/CNPJ</label>
+                            <input type="text" class="form-control"
+                                id="cpfCnpj"
+                                [(ngModel)]="fornecedor.cpfCnpj"
+                                name="cpfCnpj" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="usuarioId">Usuário</label>
+                            <select class="form-control" id="usuarioId"
+                                [(ngModel)]="fornecedor.usuarioId"
+                                name="usuarioId" required>
+                                <!-- <option *ngFor="let user of usuarios"
+                                    [ngValue]="user">{{ user.name }}</option> -->
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="descricao">Descrição</label>
+                            <textarea class="form-control" id="descricao"
+                                [(ngModel)]="fornecedor.descricao"
+                                name="descricao" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="image" class="form-label">Imagem</label>
+                            <input type="file" class="form-control" id="image"
+                                (change)="onFileChange($event)">
+                        </div>
+                        <button type="submit"
+                            class="btn btn-success">Salvar</button>
+                        <a href="#!" class="btn btn-secondary">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
