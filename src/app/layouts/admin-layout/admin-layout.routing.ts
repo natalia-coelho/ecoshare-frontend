@@ -5,7 +5,7 @@ import { IconsComponent } from '../../pages/icons/icons.component';
 import { MapsComponent } from '../../pages/maps/maps.component';
 import { UserProfileComponent } from '../../pages/user-profile/user-profile.component';
 import { TablesComponent } from '../../pages/tables/tables.component';
-import { ProductsComponent } from 'src/app/pages/products/products.component';
+import { ProductsComponent } from 'src/app/pages/products/product-view/products.component';
 import { ProductDetailsComponent } from 'src/app/pages/products/product-details/product-details.component';
 import { ProductUpdateComponent } from 'src/app/pages/products/product-update/product-update.component';
 import { ProductAddComponent } from 'src/app/pages/products/product-add/product-add.component';
@@ -24,5 +24,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'product-add', component: ProductAddComponent },
 
     { path: 'supplier-view', component: SupplierViewComponent },
-    
+
 ];

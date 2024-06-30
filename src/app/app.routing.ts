@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { LoginComponent } from './pages/login/login.component';
-import { ProductsComponent } from './pages/products/products.component';
+import { ProductsComponent } from './pages/products/product-view/products.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full', }, // trocar para not found
