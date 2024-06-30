@@ -1,6 +1,6 @@
 import { Pessoas } from "./Pessoas";
 
-export class Usuarios {
+export class Usuario {
     usuarioId: number;
     nomeUsuario: string;
     perfil: string;
