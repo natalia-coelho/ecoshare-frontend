@@ -38,6 +38,41 @@
                                 name="productPrice" required>
                         </div>
                         <div class="form-group">
+                            <label>Categoria</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio"
+                                    id="categoriaCosmeticos" name="categoria"
+                                    [(ngModel)]="product.categoria"
+                                    [value]="'COSMETICOS'" required>
+                                <label class="form-check-label"
+                                    for="categoriaCosmeticos">Cosméticos</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio"
+                                    id="categoriaAlimenticios" name="categoria"
+                                    [(ngModel)]="product.categoria"
+                                    [value]="'ALIMENTICIOS'" required>
+                                <label class="form-check-label"
+                                    for="categoriaAlimenticios">Alimentícios</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio"
+                                    id="categoriaVestuario" name="categoria"
+                                    [(ngModel)]="product.categoria"
+                                    [value]="'VESTUARIO'" required>
+                                <label class="form-check-label"
+                                    for="categoriaVestuario">Vestuário</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio"
+                                    id="categoriaOutros" name="categoria"
+                                    [(ngModel)]="product.categoria"
+                                    [value]="'OUTROS'" required>
+                                <label class="form-check-label"
+                                    for="categoriaOutros">Outros</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="productDescription">Descrição do
                                 Produto</label>
                             <textarea class="form-control"
@@ -45,13 +80,19 @@
                                 [(ngModel)]="product.descricao"
                                 name="productDescription" required></textarea>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="productImage">URL da Imagem do
                                 Produto</label>
                             <input type="text" class="form-control"
                                 id="productImage"
                                 [(ngModel)]="product.imagemProduto"
                                 name="productImage" required>
+                        </div> -->
+                        <div class="form-group mb-3">
+                            <label for="image" class="form-label">Imagem</label>
+                            <input type="file" class="form-control" id="image"
+                                [(ngModel)]="product.imagemProduto"
+                                (change)="onFileChange($event)">
                         </div>
                         <div class="d-flex justify-content-end">
                             <button type="submit"

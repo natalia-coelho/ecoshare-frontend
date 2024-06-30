@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Produto } from 'src/app/models/Produto';
+import { Categoria, Produto } from 'src/app/models/Produto';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -12,16 +12,23 @@ export class ProductAddComponent implements OnInit {
   product: Produto = {
     nome: '',
     preco: 0.0,
+    categoria: Categoria.Outros,
     descricao: '',
     imagemProduto: '',
     fornecedorId: 1
   };
+
+  selectedFile: File;
 
   constructor(
     private router: Router,
     private productService: ProductService) { }
 
   ngOnInit(): void { }
+
+  onFileChange(event: any) {
+    this.selectedFile = event.target.files[0];
+  }
 
   adicionarProduto(): void {
     this.productService.createProduct(this.product).subscribe(() => {

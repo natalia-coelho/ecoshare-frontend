@@ -1,4 +1,3 @@
-import { Categoria } from "./Categoria";
 import { Fornecedor } from "./Fornecedor";
 
 export class Produto {
@@ -7,7 +6,14 @@ export class Produto {
     preco: number;
     descricao?: string;
     imagemProduto?: string;
-    categoria?: Categoria; // Se Categoria também for uma classe/modelo
-    fornecedor?: Fornecedor; // Se Fornecedor também for uma classe/modelo
+    categoria?: Categoria;
+    fornecedor?: Fornecedor;
     fornecedorId?: number;
+}
+
+export enum Categoria {
+    Cosmeticos = 'Cosmeticos',
+    Alimenticios = 'Alimenticios',
+    Vestuario = 'Vestuario',
+    Outros = 'Outros'
 }
