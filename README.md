@@ -20,13 +20,13 @@ npm install
 ```
 
 4. **Start the Development Server:**
-``` bash 
+``` bash
 ng serve
 ```
 
-5. **Open in Browser:**  
+5. **Open in Browser:**
     Navigate to `http://localhost:4200/` in your web browser to view the application.
-    
+
 
 ## Additional Information
 
