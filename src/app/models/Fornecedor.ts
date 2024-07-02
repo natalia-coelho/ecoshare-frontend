@@ -1,7 +1,7 @@
 import { Usuario } from "./Usuario";
 
 export class Fornecedor {
-    fornecerdorId: number;
+    fornecedorId: number;
     razaoSocial: string;
     nomeFantasia: string;
     cpfCnpj: string;

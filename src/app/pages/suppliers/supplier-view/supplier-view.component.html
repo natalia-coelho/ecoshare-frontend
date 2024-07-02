@@ -12,7 +12,7 @@
                     todos os fornecedores cadastrados no sistema</p>
                 <a
                     [routerLink]="['/supplier-add']"
-                    class="btn btn-primary">Adicionar fornecedor</a> 
+                    class="btn btn-primary">Adicionar fornecedor</a>
             </div>
         </div>
     </div>
@@ -53,7 +53,8 @@
                                 <td>{{ fornecedor.country }}</td>
                                 <td>{{ fornecedor.products }}</td>
                                 <td>
-                                    <a href="#!"
+                                    <a
+                                        [routerLink]="['/supplier-detail', fornecedor.fornecedorId]"
                                         class="btn btn-sm btn-info">Detalhes</a>
                                     <a href="#!"
                                         class="btn btn-sm btn-warning">Editar</a>

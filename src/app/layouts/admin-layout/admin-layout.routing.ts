@@ -11,6 +11,7 @@ import { ProductUpdateComponent } from 'src/app/pages/products/product-update/pr
 import { ProductAddComponent } from 'src/app/pages/products/product-add/product-add.component';
 import { SupplierViewComponent } from 'src/app/pages/suppliers/supplier-view/supplier-view.component';
 import { SupplierAddComponent } from 'src/app/pages/suppliers/supplier-add/supplier-add.component';
+import { SupplierDetailsComponent } from 'src/app/pages/suppliers/supplier-details/supplier-details.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
@@ -26,4 +27,5 @@ export const AdminLayoutRoutes: Routes = [
 
     { path: 'supplier-view', component: SupplierViewComponent },
     { path: 'supplier-add', component: SupplierAddComponent },
+    { path: 'supplier-detail/:id', component: SupplierDetailsComponent },
 ];

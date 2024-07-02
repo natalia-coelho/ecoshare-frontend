@@ -18,5 +18,4 @@ export class SupplierViewComponent implements OnInit {
       this.fornecedores = data;
     })
   }
-
 }

@@ -13,7 +13,7 @@ import { SupplierService } from 'src/app/services/supplier.service';
 })
 export class SupplierAddComponent implements OnInit {
   fornecedor: Fornecedor = {
-    fornecerdorId: 0,
+    fornecedorId: 0,
     razaoSocial: '',
     nomeFantasia: '',
     cpfCnpj: '',
@@ -45,6 +45,7 @@ export class SupplierAddComponent implements OnInit {
     this.supplierService.createSupplier(this.fornecedor).subscribe(response => {
       console.log('Fornecedor adicionado com sucesso!', response);
     });
+
 
 
 
