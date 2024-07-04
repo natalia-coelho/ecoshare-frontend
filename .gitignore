@@ -40,6 +40,5 @@ testem.log
 Thumbs.db
 
 # modified by me
-src/assets/vendor
 /.vscode/
 .vscode/launch.json
