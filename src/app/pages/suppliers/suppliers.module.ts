@@ -6,13 +6,15 @@ import { SupplierViewComponent } from './supplier-view/supplier-view.component';
 import { FormsModule } from '@angular/forms';
 import { SupplierDetailsComponent } from './supplier-details/supplier-details.component';
 import { SupplierAddComponent } from './supplier-add/supplier-add.component';
+import { SupplierUpdateComponent } from './supplier-update/supplier-update.component';
 
 
 @NgModule({
   declarations: [
     SupplierViewComponent,
     SupplierAddComponent,
-    SupplierDetailsComponent
+    SupplierDetailsComponent,
+    SupplierUpdateComponent
   ],
   imports: [
     CommonModule,
