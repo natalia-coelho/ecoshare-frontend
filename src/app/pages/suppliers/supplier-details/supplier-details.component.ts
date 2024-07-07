@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Fornecedor } from 'src/app/models/Fornecedor';
+import { Produto } from 'src/app/models/Produto';
+import { ProductService } from 'src/app/services/product.service';
 import { SupplierService } from 'src/app/services/supplier.service';
 
 @Component({
@@ -10,10 +12,13 @@ import { SupplierService } from 'src/app/services/supplier.service';
 })
 export class SupplierDetailsComponent implements OnInit {
   fornecedor: Fornecedor
+  products: Produto[];
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private fornecedorService: SupplierService
+    private fornecedorService: SupplierService,
+    private productService: ProductService
   ) { }
 
   ngOnInit(): void {
@@ -21,12 +26,19 @@ export class SupplierDetailsComponent implements OnInit {
     this.fornecedorService.getSupplierById(fornecedorId).subscribe(
       (supplier: Fornecedor) => {
         this.fornecedor = supplier;
+        this.loadProducts(supplier.fornecedorId);
         console.log('Supplier Details:', this.fornecedor);
       },
       error => {
         console.error('Error fetching supplier:', error);
       }
     );
+  }
+
+  loadProducts(fornecedorId: number) {
+    this.productService.getProductsBySypplierId(fornecedorId).subscribe(data => {
+      this.products = data;
+    })
   }
 
   voltar() {

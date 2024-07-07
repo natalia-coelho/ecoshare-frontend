@@ -9,28 +9,32 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ProductService {
-  private productUrl = `${environment.apiUrl}/produtos`;
+  private baseUrl = `${environment.apiUrl}/produtos`;
 
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Produto[]> {
-    return this.http.get<Produto[]>(`${this.productUrl}`);
+    return this.http.get<Produto[]>(`${this.baseUrl}`);
   }
 
   getProductById(id: number): Observable<Produto> {
-    var url = this.http.get<Produto>(`${this.productUrl}/${id}`);
+    var url = this.http.get<Produto>(`${this.baseUrl}/${id}`);
     return url;
   }
 
   createProduct(product: Produto): Observable<Produto> {
-    return this.http.post<Produto>(this.productUrl, product);
+    return this.http.post<Produto>(this.baseUrl, product);
   }
 
   updateProduct(id: number, product: Produto): Observable<Produto> {
-    return this.http.put<Produto>(`${this.productUrl}/${id}`, product);
+    return this.http.put<Produto>(`${this.baseUrl}/${id}`, product);
   }
 
   deleteProduct(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.productUrl}/${id}`);
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
+
+  getProductsBySypplierId(fornecedorId: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/Fornecedor/${fornecedorId}`);
   }
 }
