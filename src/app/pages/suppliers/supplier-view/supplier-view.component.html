@@ -59,8 +59,9 @@
                                     <a
                                         [routerLink]="['/supplier-update', fornecedor.fornecedorId]"
                                         class="btn btn-sm btn-warning">Editar</a>
-                                    <a href="#!"
-                                        class="btn btn-sm btn-danger">Excluir</a>
+                                    <button type="button"
+                                        class="btn btn-sm btn-danger"
+                                        (click)="removeSupplier(fornecedor.fornecedorId)">Excluir</button>
                                 </td>
                             </tr>
                         </tbody>
