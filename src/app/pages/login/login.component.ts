@@ -17,6 +17,8 @@ export class LoginComponent {
   loginDto = new Login();
   registerDto = new Register();
   jwtDTO = new JwtAuth();
+  loginFailed: boolean = false;
+  errorMessage: string = '';
 
   // constructor(private authService: AuthenticationService) { }
   constructor(private authService: AuthenticationService, private router: Router) { }
@@ -25,11 +27,14 @@ export class LoginComponent {
     this.authService.login(this.loginDto).subscribe({
       next: (jwtDTO) => {
         localStorage.setItem('jwtToken', jwtDTO.token);
-        this.router.navigate(['/products']); // Redirect to the dashboard or any other page
+        this.router.navigate(['/products']);
+        this.loginFailed = false;
+        this.errorMessage = '';
       },
       error: (err) => {
         console.error('Login failed', err);
-        // Handle the error (e.g., show an error message to the user)
+        this.loginFailed = true;
+        this.errorMessage = 'Credenciais inválidas. Por favor, tente novamente.';
       }
     });
   }

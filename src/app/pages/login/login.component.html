@@ -4,7 +4,6 @@
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-6">
           <h1 class="text-white">Bem-vindo!</h1>
-          <!-- <p class="text-lead text-light">Use estes formulários incríveis para fazer login ou criar uma nova conta em seu projeto gratuitamente.</p> -->
         </div>
       </div>
     </div>
@@ -61,8 +60,11 @@
               </label>
             </div>
             <div class="text-center">
-              <!-- <button type="button" class="btn btn-primary my-4" (click)="login(loginDto)">Entrar</button> -->
               <button type="button" class="btn btn-primary my-4" (click)="login()">Entrar</button>
+              <!-- Error message display -->
+              <div *ngIf="loginFailed" class="error-message mt-3">
+                {{ errorMessage }}
+              </div>
             </div>
           </form>
         </div>
