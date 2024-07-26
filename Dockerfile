@@ -5,10 +5,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci --legacy-peer-deps
 COPY . .
+RUN npm run build --prod
 
-# WORKDIR /app/src
-# RUN npm run build --prod
-
-# FROM nginx:alpine
-# COPY --from=build /ecoshare-frontend/dist/ /usr/share/nginx/html
-# EXPOSE 80
+FROM nginx:alpine
+COPY --from=build /app/dist/ /usr/share/nginx/html
+EXPOSE 80
