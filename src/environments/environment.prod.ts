@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "https://localhost:7255/ecoshare"
+  apiUrl: "https://app-ecoshare-backend.azurewebsites.net/ecoshare"
 };
