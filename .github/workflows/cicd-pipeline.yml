@@ -42,9 +42,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/ecoshare-backend:${{ github.sha }}
-            ${{ secrets.DOCKER_USERNAME }}/ecoshare-backend:latest
-            ${{ secrets.DOCKER_USERNAME }}/ecoshare-backend:prd
+            ${{ secrets.DOCKER_USERNAME }}/ecoshare-frontend:${{ github.sha }}
+            ${{ secrets.DOCKER_USERNAME }}/ecoshare-frontend:latest
           # Reference: https://docs.docker.com/build/ci/github-actions/cache/
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
