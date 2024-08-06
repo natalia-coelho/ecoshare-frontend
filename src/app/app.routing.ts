@@ -7,11 +7,12 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProductsComponent } from './pages/products/product-view/products.component';
-import { PasswordResetComponent } from './components/password-reset/password-reset.component';
+import { PasswordResetComponent } from './pages/password-reset/password-reset.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full', }, // trocar para not found
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full', }, // TODO: trocar para not found
   { path: 'login', component: LoginComponent },
+  { path: 'password-reset', component: PasswordResetComponent },
   {
     path: '',
     component: AdminLayoutComponent,
@@ -44,10 +45,7 @@ const routes: Routes = [
   //     }
   //   ]
   // }
-  {
-    path: 'password-reset',
-    component: PasswordResetComponent
-  },
+
 ];
 
 @NgModule({
