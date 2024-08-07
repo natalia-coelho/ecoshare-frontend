@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Email } from 'src/app/models/Email';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-password-reset',
@@ -8,17 +9,21 @@ import { HttpClient } from '@angular/common/http';
 export class PasswordResetComponent {
   email: string = '';
   message: string | null = null;
+  resetFailed: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private authService: AuthenticationService) {}
 
-  onSubmit() {
-    this.http.post('/api/password-reset', { email: this.email }).subscribe(
-      (response: any) => {
+  // TODO: Finish implementing this and integrating with the screen
+  resetPassword() {
+    this.authService.resetPassword(this.email).subscribe({
+      next: () => {
         this.message = 'Se o email estiver registrado, você receberá instruções para redefinir sua senha.';
       },
-      (error) => {
+      error: (err) => {
+        console.error('Password reset failed', err);
+        this.resetFailed = true;
         this.message = 'Ocorreu um erro. Tente novamente mais tarde.';
       }
-    );
+    })
   }
 }

@@ -20,7 +20,6 @@ export class LoginComponent {
   loginFailed: boolean = false;
   errorMessage: string = '';
 
-  // constructor(private authService: AuthenticationService) { }
   constructor(private authService: AuthenticationService, private router: Router) { }
 
   login() {

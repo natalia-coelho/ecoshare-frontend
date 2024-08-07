@@ -27,12 +27,8 @@ export class AuthenticationService {
   }
 
   // TODO: Implement this endpoint in the backend
-  public resetPassword(email: Email): Observable<boolean> {
-    return this.http.post(`${environment.apiUrl}/${this.resetPasswordUrl}`, { email })
-      .pipe(
-        map(() => true),
-        catchError(() => of(false))
-      );
+  public resetPassword(email: string): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/${this.resetPasswordUrl}`, { email });
   }
 
   public getWeather(): Observable<any> {
