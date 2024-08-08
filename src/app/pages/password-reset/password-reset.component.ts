@@ -15,7 +15,7 @@ export class PasswordResetComponent {
 
   // TODO: Finish implementing this and integrating with the screen
   resetPassword() {
-    this.authService.resetPassword(this.email).subscribe({
+    this.authService.forgotPassword(this.email).subscribe({
       next: () => {
         this.message = 'Se o email estiver registrado, você receberá instruções para redefinir sua senha.';
       },

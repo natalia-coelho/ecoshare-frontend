@@ -28,8 +28,7 @@ export class AuthenticationService {
     return this.http.post<JwtAuth>(this.apiUrl, credentials);
   }
 
-  // TODO: Implement this endpoint in the backend
-  public resetPassword(email: string): Observable<any> {
+  public forgotPassword(email: string): Observable<any> {
     return this.http.post(`${environment.apiUrl}/${this.resetPasswordUrl}`, { email });
   }
 
