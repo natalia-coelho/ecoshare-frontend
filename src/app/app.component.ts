@@ -22,12 +22,12 @@ export class AppComponent {
   }
 
 
-  login(loginDto: Login) {
-    //stores the jwtDTO into a state
-    this.authService.login(loginDto).subscribe((jwtDTO) => {
-      localStorage.setItem('jwtToken', jwtDTO.token)
-    });
-  }
+  // login(loginDto: Login) {
+  //   //stores the jwtDTO into a state
+  //   this.authService.login(loginDto).subscribe((jwtDTO) => {
+  //     localStorage.setItem('jwtToken', jwtDTO.token)
+  //   });
+  // }
 
   getWeather() {
     this.authService.getWeather().subscribe((weatherData: any) => {

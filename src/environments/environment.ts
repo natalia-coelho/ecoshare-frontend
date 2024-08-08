@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://localhost:7255/ecoshare"
+  // apiUrl: "https://localhost:7255/ecoshare"
+  apiUrl: "http://localhost:5028/ecoshare"
 };
 
 /*

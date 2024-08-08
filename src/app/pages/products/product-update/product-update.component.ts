@@ -25,10 +25,10 @@ export class ProductUpdateComponent implements OnInit {
     this.productService.getProductById(productId).subscribe(
       (product: Produto) => {
         this.product = product;
-        console.log('Product Details:', this.product);
+        console.log('Produto atualizado:', this.product);
       },
       error => {
-        console.error('Error fetching product:', error);
+        console.error('Erro ao atualizar produto:', error);
       }
     );
   }

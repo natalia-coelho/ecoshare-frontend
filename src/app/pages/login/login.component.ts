@@ -13,10 +13,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 
 export class LoginComponent {
-  title = 'argon-dashboard-angular';
-  loginDto = new Login();
-  registerDto = new Register();
-  jwtDTO = new JwtAuth();
+  loginDto: Login = new Login();
   loginFailed: boolean = false;
   errorMessage: string = '';
 
