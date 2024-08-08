@@ -13,7 +13,7 @@ import { Email } from '../models/Email';
 export class AuthenticationService {
   registerUrl = "Usuarios/register"
   loginUrl = "Usuarios/login"
-  resetPasswordUrl = "Usuarios/ResetPassword"
+  resetPasswordUrl = "Usuarios/ForgotPassword"
   weatherUrl = "WeatherForecast"
 
   constructor(private http: HttpClient) { }
