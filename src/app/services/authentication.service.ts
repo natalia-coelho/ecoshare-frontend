@@ -12,7 +12,6 @@ export class AuthenticationService {
   registerUrl = "Usuarios/register"
   loginUrl = "Usuarios/login"
   resetPasswordUrl = "Usuarios/ForgotPassword"
-  weatherUrl = "WeatherForecast"
 
   constructor(private http: HttpClient) { }
 
