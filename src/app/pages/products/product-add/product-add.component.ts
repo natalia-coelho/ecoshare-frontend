@@ -14,7 +14,7 @@ export class ProductAddComponent implements OnInit {
     preco: 0.0,
     categoria: Categoria.Outros,
     descricao: '',
-    imagemProduto: '',
+    imagem: '',
     fornecedorId: 1
   };
 

@@ -27,6 +27,17 @@
                 <div class="card-body">
                     <form>
                         <div class="form-group">
+                            <label for="productImageUpload">Imagem do
+                                Produto</label>
+                            <div *ngIf="imageUrl" class="text-center mt-2">
+                                <img [src]="imageUrl" alt="Imagem do Produto"
+                                    class="img-fluid"
+                                    style="max-width: 300px; max-height: 300px;" />
+                            </div>
+                            <input type="file" class="form-control mt-2"
+                                (change)="onFileSelected($event)" />
+                        </div>
+                        <div class="form-group">
                             <label for="productName">Nome do Produto</label>
                             <input type="text" class="form-control"
                                 id="productName" [(ngModel)]="product.nome"
@@ -81,16 +92,8 @@
                                 [(ngModel)]="product.descricao"
                                 name="productDescription"></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="productImage">URL da Imagem do
-                                Produto</label>
-                            <input type="text" class="form-control"
-                                id="productImage"
-                                [(ngModel)]="product.imagemProduto"
-                                name="productImage">
-                        </div>
                         <div class="d-flex justify-content-between">
-                            <button type="submit" class="btn btn-success"
+                            <button type="button" class="btn btn-success"
                                 (click)="atualizarProduto()">Salvar
                                 Alterações</button>
                             <button type="button" class="btn btn-danger"

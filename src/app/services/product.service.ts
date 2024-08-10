@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ProductService {
+
   private baseUrl = `${environment.apiUrl}/produtos`;
 
   constructor(private http: HttpClient) { }
@@ -36,5 +37,9 @@ export class ProductService {
 
   getProductsBySypplierId(fornecedorId: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/Fornecedor/${fornecedorId}`);
+  }
+
+  uploadProductImage(productId: number, formData: FormData): Observable<void> {
+    return this.http.post<void>(`${this.baseUrl}/${productId}/upload`, formData);
   }
 }

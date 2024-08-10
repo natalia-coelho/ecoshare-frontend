@@ -5,7 +5,7 @@ export class Produto {
     nome: string;
     preco: number;
     descricao?: string;
-    imagemProduto?: string;
+    imagem?: string;
     categoria?: Categoria;
     fornecedor?: Fornecedor;
     fornecedorId?: number;
