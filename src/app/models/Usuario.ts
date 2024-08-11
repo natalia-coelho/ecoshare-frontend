@@ -1,4 +1,4 @@
-import { Pessoas } from "./Pessoas";
+import { Pessoa } from "./Pessoa";
 
 export class Usuario {
     usuarioId: number;
@@ -7,5 +7,5 @@ export class Usuario {
     login: string;
     password: string;
     CpfCnpj: string;
-    PessoaId: Pessoas;
+    PessoaId: Pessoa;
 }
