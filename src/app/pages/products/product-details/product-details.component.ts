@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from 'src/app/models/Produto';
 import { ProductService } from 'src/app/services/product.service';
+import { Utils } from '../utils';
 
 @Component({
   selector: 'app-product-details',
@@ -11,6 +12,8 @@ import { ProductService } from 'src/app/services/product.service';
 
 export class ProductDetailsComponent implements OnInit {
   product: any;
+  imageUrl: string | null = null;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -22,6 +25,8 @@ export class ProductDetailsComponent implements OnInit {
     this.productService.getProductById(productId).subscribe(
       (product: Produto) => {
         this.product = product;
+        if (product.imagem)
+          this.imageUrl = Utils.getImageUrl(product);
         console.log('Product Details:', this.product);
       },
       error => {

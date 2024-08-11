@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria, Produto } from 'src/app/models/Produto';
 import { ProductService } from 'src/app/services/product.service';
+import { Utils } from '../utils';
 
 @Component({
   selector: 'app-product-add',
@@ -18,7 +19,8 @@ export class ProductAddComponent implements OnInit {
     fornecedorId: 1
   };
 
-  selectedFile: File;
+  selectedFile: File | null = null;
+  imageUrl: string | null = null;
 
   constructor(
     private router: Router,
@@ -28,11 +30,34 @@ export class ProductAddComponent implements OnInit {
 
   onFileChange(event: any) {
     this.selectedFile = event.target.files[0];
+    if (this.selectedFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imageUrl = reader.result as string;
+        this.product.imagem = this.imageUrl.split(',')[1]; // Armazena a string base64 sem o prefixo "data:image/jpeg;base64,"
+      };
+      reader.readAsDataURL(this.selectedFile);
+    }
   }
 
-  adicionarProduto(): void {
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+
+    if (this.selectedFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imageUrl = reader.result as string;
+      };
+      reader.readAsDataURL(this.selectedFile);
+    }
+  }
+
+  async adicionarProduto() {
+    if (this.product && this.selectedFile) {
+      this.product.imagem = await Utils.convertFileToBase64(this.selectedFile);
+    }
     this.productService.createProduct(this.product).subscribe(() => {
-      this.router.navigate(['/product-add']); // Redirect to the product list page after adding
+      this.router.navigate(['/products']); // Redireciona para a página de listagem de produtos após adicionar
     });
   }
 }

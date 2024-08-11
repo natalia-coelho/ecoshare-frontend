@@ -8,6 +8,24 @@ export class Utils {
         }
         return bytes;
     }
+
+    static getImageUrl(object) {
+        const byteArray = new Uint8Array(Utils.convertImageToBase64(object.imagem));
+        const binaryString = byteArray.reduce((data, byte) => data + String.fromCharCode(byte), '');
+        return 'data:image/jpeg;base64,' + btoa(binaryString);
+    }
+
+    static convertFileToBase64(file: File): Promise<string> {
+        return new Promise<string>((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const base64String = (reader.result as string).split(',')[1];
+                resolve(base64String);
+            };
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+        });
+    }
 }
 
 

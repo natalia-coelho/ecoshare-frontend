@@ -33,11 +33,12 @@
                         <div class="col-md-4 mb-4"
                             *ngFor="let product of products">
                             <div class="card">
-                                <img src="{{ product.imagem }}"
-                                    class="card-img-top" alt="Product 1">
+                                <img [src]="getProductImageUrl(product)"
+                                    class="card-img-top" alt="Imagem do Produto"
+                                    style="max-width: 300px; max-height: 300px; object-fit: cover;">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ product.nome
-                                        }} {{ product.produtoId
+                                    <h5 class="card-title">{{ product.produtoId
+                                        }} - {{ product.nome
                                         }} </h5>
                                     <h5 class="card-title">R$ {{ product.preco
                                         }}</h5>

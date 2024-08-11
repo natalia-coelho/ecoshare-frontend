@@ -3,6 +3,7 @@ import { Component, NgModule, OnInit } from '@angular/core';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { Produto } from 'src/app/models/Produto';
 import { ProductService } from 'src/app/services/product.service';
+import { Utils } from '../utils';
 
 @Component({
   selector: 'app-products',
@@ -11,16 +12,28 @@ import { ProductService } from 'src/app/services/product.service';
 })
 
 export class ProductsComponent implements OnInit {
-  products: Produto[];
+  products: Produto[] = [];
+  imageUrl: string | null = null;
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.getProducts();
+    this.productService.getProducts().subscribe(
+      (products: Produto[]) => {
+        this.products = products;
+      }, error => {
+        console.error('Erro ao carregar produtos:', error);
+      }
+    );
   }
 
-  getProducts(): void {
-    this.productService.getProducts()
-      .subscribe(products => this.products = products);
+  getProductImageUrl(product) {
+    var url: String;
+    if (product.imagem)
+      url = Utils.getImageUrl(product);
+    else
+      return 'assets/img/brand/default-product.png';
+
+    return url;
   }
 }
