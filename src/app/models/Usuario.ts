@@ -2,10 +2,11 @@ import { Pessoa } from "./Pessoa";
 
 export class Usuario {
     usuarioId: number;
-    nomeUsuario: string;
+    userName: string;
     perfil: string;
     login: string;
     password: string;
-    CpfCnpj: string;
+    cpfCnpj: string;
+    dataNascimento: string;
     PessoaId: Pessoa;
 }

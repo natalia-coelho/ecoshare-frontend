@@ -8,7 +8,7 @@ import { Pessoa } from '../models/Pessoa';
   providedIn: 'root'
 })
 export class PerfilService {
-  private baseUrl = `${environment.apiUrl}/produtos`;
+  private baseUrl = `${environment.apiUrl}/perfil`;
 
   constructor(private http: HttpClient) { }
 

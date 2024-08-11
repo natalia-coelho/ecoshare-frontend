@@ -72,7 +72,7 @@
             </div>
             <div class="h5 mt-4">
               <i
-                class="ni business_briefcase-24 mr-2"></i>{{pessoa.fornecedor?.descricao
+                class="ni business_briefcase-24 mr-2"></i>{{pessoa.tituloPerfil
               || 'Descrição'}}
             </div>
             <div>
@@ -110,7 +110,8 @@
                       de usuário</label>
                     <input type="text" id="input-username"
                       class="form-control form-control-alternative"
-                      placeholder="Nome de usuário" [value]="pessoa.usuarioId">
+                      placeholder="Nome de usuário"
+                      [value]="pessoa.usuario?.userName">
                   </div>
                 </div>
                 <div class="col-lg-6">
@@ -157,7 +158,7 @@
                     <input id="input-address"
                       class="form-control form-control-alternative"
                       placeholder="Endereço residencial"
-                      [value]="pessoa.endereco?.logradouro">
+                      [value]="pessoa.endereco.logradouro">
                   </div>
                 </div>
               </div>
@@ -168,7 +169,7 @@
                       for="input-city">Cidade</label>
                     <input type="text" id="input-city"
                       class="form-control form-control-alternative"
-                      placeholder="Cidade" [value]="pessoa.endereco?.cidade">
+                      placeholder="Cidade" [value]="pessoa.endereco.cidade">
                   </div>
                 </div>
                 <div class="col-lg-4">
@@ -177,7 +178,7 @@
                       for="input-country">País</label>
                     <input type="text" id="input-country"
                       class="form-control form-control-alternative"
-                      placeholder="País" [value]="pessoa.endereco?.pais">
+                      placeholder="País" [value]="pessoa.endereco.pais">
                   </div>
                 </div>
                 <div class="col-lg-4">
@@ -199,7 +200,7 @@
               <div class="form-group">
                 <label>Sobre mim</label>
                 <textarea rows="4" class="form-control form-control-alternative"
-                  placeholder="Algumas palavras sobre você ...">{{pessoa.bio}}</textarea>
+                  placeholder="Algumas palavras sobre você ...">{{pessoa.descricao}}</textarea>
               </div>
             </div>
           </form>
