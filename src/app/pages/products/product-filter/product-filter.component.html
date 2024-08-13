@@ -31,7 +31,8 @@
                         <h5 class="card-title text-muted"> {{ produto.preco |
                             currency:'BRL' }}</h5>
                         <p class="card-text">{{ produto.descricao }}</p>
-                        <a [routerLink]="['/produto', produto.id]"
+                        <a
+                            [routerLink]="['/product-detail/', produto.produtoId]"
                             class="btn btn-primary mt-3">Ver Detalhes</a>
                     </div>
                 </div>
