@@ -4,13 +4,11 @@
     <a
       class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"
       routerLinkActive="active"
-      [routerLink]="['/dashboard']"
-      >{{ getTitle() }}</a
-    >
+      [routerLink]="['/dashboard']">{{ getTitle() }}</a>
     <!-- Form -->
     <form
       class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto"
-    >
+      (ngSubmit)="onSearch()">
       <div class="form-group mb-0" [ngClass]="{ focused: focus === true }">
         <div class="input-group input-group-alternative">
           <div class="input-group-prepend">
@@ -20,13 +18,22 @@
             class="form-control"
             placeholder="Procurar"
             type="text"
+            [(ngModel)]="searchTerm"
+            name="searchTerm"
             (focus)="focus = true"
-            
-            (blur)="focus = false"
-          />
+            (blur)="focus = false" />
         </div>
       </div>
     </form>
+    <!-- Resultados da Pesquisa -->
+    <div *ngIf="produtos.length > 0" class="search-results">
+      <ul>
+        <li *ngFor="let produto of produtos">
+          {{ produto.nome }} - {{ produto.descricao }} - {{ produto.preco |
+          currency }}
+        </li>
+      </ul>
+    </div>
     <!-- User -->
     <ul class="navbar-nav align-items-center d-none d-md-flex">
       <li class="nav-item" ngbDropdown placement="bottom-right">
@@ -35,8 +42,7 @@
             <span class="avatar avatar-sm rounded-circle">
               <img
                 alt="Image placeholder"
-                src="assets/img/theme/team-4-800x800.jpg"
-              />
+                src="assets/img/theme/team-4-800x800.jpg" />
             </span>
             <div class="media-body ml-2 d-none d-lg-block">
               <span class="mb-0 text-sm font-weight-bold">Natalia Coelho</span>
@@ -50,40 +56,36 @@
           <a
             routerLinkActive="active"
             [routerLink]="['/user-profile']"
-            class="dropdown-item"
-          >
+            class="dropdown-item">
             <i class="ni ni-single-02"></i>
             <span>Meu perfil</span>
           </a>
-          <!-- <a
+          <a
             routerLinkActive="active"
             [routerLink]="['/user-profile']"
-            class="dropdown-item"
-          >
+            class="dropdown-item">
             <i class="ni ni-settings-gear-65"></i>
             <span>Configurações</span>
-          </a> -->
-          <!-- <a routerLinkActive="active" [routerLink]="['/user-profile']"
+          </a>
+          <a routerLinkActive="active" [routerLink]="['/user-profile']"
             class="dropdown-item">
             <i class="ni ni-calendar-grid-58"></i>
             <span>Atividade</span>
-          </a> -->
-          <!-- <a
+          </a>
+          <a
             routerLinkActive="active"
             [routerLink]="['/user-profile']"
-            class="dropdown-item"
-          >
+            class="dropdown-item">
             <i class="ni ni-support-16"></i>
             <span>Suporte</span>
-          </a> -->
-          <!-- <a
+          </a>
+          <a
             routerLinkActive="active"
             [routerLink]="['/user-profile']"
-            class="dropdown-item"
-          >
+            class="dropdown-item">
             <i class="fa fa-users"></i>
             <span>Trocar papel</span>
-          </a> -->
+          </a>
           <div class="dropdown-divider"></div>
           <a [routerLink]="['/login']" class="dropdown-item">
             <i class="ni ni-user-run"></i>

@@ -7,6 +7,7 @@ import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductUpdateComponent } from './product-update/product-update.component';
 import { FormsModule } from '@angular/forms';
+import { ProductFilterComponent } from './product-filter/product-filter.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     ProductDetailsComponent,
     ProductUpdateComponent,
     ProductAddComponent,
+    ProductFilterComponent,
   ],
   imports: [
     CommonModule,

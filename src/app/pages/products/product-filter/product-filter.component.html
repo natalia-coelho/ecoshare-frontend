@@ -1,0 +1,41 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+    style="min-height: 400px; background-size: cover; background-position: center top; background-image: url('assets/img/theme/search-bg.jpg');">
+    <span class="mask bg-gradient-primary opacity-8"></span>
+    <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+            <div class="col-lg-7 col-md-10">
+                <h1 class="display-3 text-white">Resultados da Pesquisa</h1>
+                <p class="text-white mt-0 mb-5">Veja os produtos que encontramos
+                    para sua busca "{{ searchTerm }}".</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div *ngFor="let produto of produtos" class="col-xl-4 col-md-6 mb-5">
+            <div class="card bg-secondary shadow border-0">
+                <div class="card-header bg-white border-0 text-center">
+                    <h4 class="mb-0">{{ produto.nome }}</h4>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <img
+                            [src]="getProductImageUrl(produto)"
+                            alt="{{ produto.nome }}"
+                            class="img-fluid rounded shadow"
+                            style="max-height: 200px; object-fit: cover;">
+                    </div>
+                    <div class="text-center">
+                        <h5 class="card-title text-muted"> {{ produto.preco |
+                            currency:'BRL' }}</h5>
+                        <p class="card-text">{{ produto.descricao }}</p>
+                        <a [routerLink]="['/produto', produto.id]"
+                            class="btn btn-primary mt-3">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
