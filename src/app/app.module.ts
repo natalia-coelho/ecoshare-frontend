@@ -13,7 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { authenticationInterceptor } from './services/authenticationInterceptor';
-import { PasswordResetComponent } from './pages/password-reset/password-reset.component';
+import { ResetPasswordComponent } from './pages/password-reset/reset-password.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 
@@ -31,7 +31,8 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
