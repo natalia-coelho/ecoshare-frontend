@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { Email } from 'src/app/models/Email';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
-  selector: 'app-password-reset',
-  templateUrl: './password-reset.component.html',
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.component.html',
 })
-export class PasswordResetComponent {
+export class ForgotPasswordComponent {
   email: string = '';
   message: string | null = null;
   resetFailed: boolean = false;

@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { authenticationInterceptor } from './services/authenticationInterceptor';
 import { PasswordResetComponent } from './pages/password-reset/password-reset.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { PasswordResetComponent } from './pages/password-reset/password-reset.co
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
-    PasswordResetComponent,
+    ForgotPasswordComponent
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

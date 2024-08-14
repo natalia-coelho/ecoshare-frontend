@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class AuthenticationService {
   registerUrl = "Usuarios/register"
   loginUrl = "Usuarios/login"
-  resetPasswordUrl = "Usuarios/ForgotPassword"
+  forgotPasswordUrl = "Usuarios/ForgotPassword"
 
   constructor(private http: HttpClient) { }
 
@@ -26,6 +26,6 @@ export class AuthenticationService {
   }
 
   public forgotPassword(email: string): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/${this.resetPasswordUrl}`, { email });
+    return this.http.post(`${environment.apiUrl}/${this.forgotPasswordUrl}`, { email });
   }
 }
