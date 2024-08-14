@@ -57,7 +57,13 @@ export class ProductAddComponent implements OnInit {
       this.product.imagem = await Utils.convertFileToBase64(this.selectedFile);
     }
     this.productService.createProduct(this.product).subscribe(() => {
-      this.router.navigate(['/products']); // Redireciona para a página de listagem de produtos após adicionar
+      this.router.navigate(['/products']);
     });
+  }
+
+  // TODO: implementar esse método pegando o fornecedor vinculado ao usuário que está cadastrando o produto
+  getFornecedorVinculadoUsuario() {
+    var fornecedor = this.product.fornecedorId = 1;
+    return fornecedor;
   }
 }

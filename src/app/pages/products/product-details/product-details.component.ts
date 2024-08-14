@@ -47,4 +47,14 @@ export class ProductDetailsComponent implements OnInit {
       });
     }
   }
+
+  getProductImageUrl(product) {
+    var url: String;
+    if (product && product.imagem)
+      url = Utils.getImageUrl(product);
+    else
+      url = 'assets/img/brand/default-product.png';
+
+    return url;
+  }
 }

@@ -37,6 +37,13 @@
                                 (change)="onFileSelected($event)" />
                         </div>
                         <div class="form-group">
+                            <label for="productSupplier">Fornecedor</label>
+                            <input type="text" class="form-control"
+                                id="productSupplier"
+                                [value]="getFornecedorVinculadoUsuario()"
+                                readonly>
+                        </div>
+                        <div class="form-group">
                             <label for="productName">Nome do Produto</label>
                             <input type="text" class="form-control"
                                 id="productName" [(ngModel)]="product.nome"

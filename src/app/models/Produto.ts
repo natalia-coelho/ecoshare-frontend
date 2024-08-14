@@ -9,6 +9,7 @@ export class Produto {
     categoria?: Categoria;
     fornecedor?: Fornecedor;
     fornecedorId?: number;
+    fornecedorNome?: string;
 }
 
 export enum Categoria {
