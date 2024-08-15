@@ -46,13 +46,20 @@
                                         </a>
                                     </h5>
 
-                                    <div class="mt-4">
+                                    <div class="mt-4"
+                                        *ngIf="canUpdateOrDelete()">
                                         <button class="btn btn-primary"
                                             (click)="atualizarProduto()">Atualizar
                                             Produto</button>
                                         <button class="btn btn-danger ml-2"
                                             (click)="removerProduto()">Remover
                                             Produto</button>
+                                    </div>
+                                    <div class="mt-4"
+                                        *ngIf="!canUpdateOrDelete()">
+                                        <button class="btn btn-success"
+                                            (click)="fazerPedido()">Fazer
+                                            Pedido</button>
                                     </div>
                                 </div>
                             </div>
@@ -62,4 +69,3 @@
             </div>
         </div>
     </div>
-</div>

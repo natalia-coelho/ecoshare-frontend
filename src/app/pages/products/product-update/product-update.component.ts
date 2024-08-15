@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { Produto } from 'src/app/models/Produto';
 import { Utils } from '../utils';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-product-update',
@@ -13,14 +14,17 @@ export class ProductUpdateComponent implements OnInit {
   product: Produto | null = null;
   selectedFile: File | null = null;
   imageUrl: string | null = null;
+  userRole: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private productService: ProductService
+    private productService: ProductService,
+    private authService: AuthenticationService
   ) { }
 
   ngOnInit(): void {
+    this.userRole = this.authService.getRole();
     const productId = Number(this.route.snapshot.paramMap.get('id'));
     this.productService.getProductById(productId).subscribe(
       (product: Produto) => {

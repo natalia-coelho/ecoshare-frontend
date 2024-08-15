@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from 'src/app/models/Produto';
 import { ProductService } from 'src/app/services/product.service';
 import { Utils } from '../utils';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-product-details',
@@ -11,16 +12,19 @@ import { Utils } from '../utils';
 })
 
 export class ProductDetailsComponent implements OnInit {
-  product: any;
+  product: Produto;
   imageUrl: string | null = null;
+  userRole: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private productService: ProductService
+    private productService: ProductService,
+    private authService: AuthenticationService
   ) { }
 
   ngOnInit(): void {
+    this.userRole = this.authService.getRole();
     const productId = Number(this.route.snapshot.paramMap.get('id'));
     this.productService.getProductById(productId).subscribe(
       (product: Produto) => {
@@ -46,6 +50,9 @@ export class ProductDetailsComponent implements OnInit {
         this.router.navigate(['/products']);
       });
     }
+  }
+  canUpdateOrDelete(): boolean {
+    return this.userRole !== 'CLIENTE' && this.userRole !== null;
   }
 
   getProductImageUrl(product) {
