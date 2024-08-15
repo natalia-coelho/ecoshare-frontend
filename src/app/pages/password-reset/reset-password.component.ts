@@ -24,11 +24,11 @@ export class ResetPasswordComponent implements OnInit {
   resetPassword() {
     this.authService.resetPassword(this.email, this.newPassword, this.token).subscribe({
       next: () => {
-        this.message = 'Se o email estiver registrado, você receberá instruções para redefinir sua senha.';
+        this.message = 'Senha redefinida com sucesso!';
       },
       error: (err) => {
         console.error('Password reset failed', err);
-        this.message = 'Ocorreu um erro. Tente novamente mais tarde.';
+        this.message = `Ocorreu um erro: ${err}`;
       }
     })
   }
