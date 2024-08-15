@@ -12,6 +12,7 @@ export class AuthenticationService {
   registerUrl = "Usuarios/register"
   loginUrl = "Usuarios/login"
   forgotPasswordUrl = "Usuarios/ForgotPassword"
+  resetPasswordUrl = "Usuarios/ResetPassword"
 
   constructor(private http: HttpClient) { }
 
@@ -27,5 +28,15 @@ export class AuthenticationService {
 
   public forgotPassword(email: string): Observable<any> {
     return this.http.post(`${environment.apiUrl}/${this.forgotPasswordUrl}`, { email });
+  }
+
+  public resetPassword(email: string, newPassword: string, token: string): Observable<any> {
+    const payload = {
+      Email: email,
+      Token: token,
+      NewPassword: newPassword
+    };
+
+    return this.http.post(`${environment.apiUrl}/${this.resetPasswordUrl}`, payload);
   }
 }
