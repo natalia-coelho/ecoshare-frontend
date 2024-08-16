@@ -55,6 +55,10 @@ export class ProductDetailsComponent implements OnInit {
     return this.userRole !== 'CLIENTE' && this.userRole !== null;
   }
 
+  fazerPedido(): void {
+    this.router.navigate(['/supplier-detail/', this.product.fornecedorId]);
+  }
+
   getProductImageUrl(product) {
     var url: String;
     if (product && product.imagem)

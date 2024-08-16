@@ -13,6 +13,9 @@ import { SupplierService } from 'src/app/services/supplier.service';
 export class SupplierDetailsComponent implements OnInit {
   fornecedor: Fornecedor
   products: Produto[];
+  pedidos: any[] = [];
+  instagramUrl = '';
+  whatsAppUrl = '';
 
   constructor(
     private router: Router,

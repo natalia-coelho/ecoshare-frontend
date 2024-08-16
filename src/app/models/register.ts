@@ -1,8 +1,11 @@
 export class Register {
-    username = null;
-    email = null;
+    nome: string;
+    sobrenome: string;
+    telefone: string;
+    username: string;
+    email: string;
     birthdate = Date
-    password = null;
-    passwordConfirmation = null;
-    role = "";
+    password: string;
+    passwordConfirmation: string;
+    role: number;
 }

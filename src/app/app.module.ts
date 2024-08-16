@@ -15,8 +15,6 @@ import { ComponentsModule } from './components/components.module';
 import { authenticationInterceptor } from './services/authenticationInterceptor';
 import { ResetPasswordComponent } from './pages/password-reset/reset-password.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
-import { OrderComponent } from './pages/orders/order/order.component';
-
 
 @NgModule({
   imports: [
@@ -34,7 +32,6 @@ import { OrderComponent } from './pages/orders/order/order.component';
     AuthLayoutComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    OrderComponent
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

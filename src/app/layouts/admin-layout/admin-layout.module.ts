@@ -9,10 +9,11 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
 import { IconsComponent } from '../../pages/icons/icons.component';
 import { MapsComponent } from '../../pages/maps/maps.component';
-import { UserProfileComponent } from '../../pages/user-profile/user-profile.component';
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsModule } from 'src/app/pages/products/products.module';
+import { SuppliersModule } from 'src/app/pages/suppliers/suppliers.module';
+import { UserProfileModule } from 'src/app/pages/user-profile/user-profile.module';
 
 @NgModule({
   imports: [
@@ -22,11 +23,12 @@ import { ProductsModule } from 'src/app/pages/products/products.module';
     HttpClientModule,
     NgbModule,
     ClipboardModule,
-    ProductsModule
+    ProductsModule,
+    SuppliersModule,
+    UserProfileModule
   ],
   declarations: [
     DashboardComponent,
-    UserProfileComponent,
     TablesComponent,
     IconsComponent,
     MapsComponent,

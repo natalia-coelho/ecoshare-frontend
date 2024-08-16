@@ -16,27 +16,25 @@ export class RegisterComponent implements OnInit {
   loginDto = new Login();
   registerDto = new Register();
   jwtDTO = new JwtAuth();
+  loginFailed: boolean = false;
+  errorMessage: string = '';
 
   constructor(private authService: AuthenticationService, private router: Router) { }
-
-  // register(registerDTO: Register) {
-  //   this.authService.register(registerDTO).subscribe();
-  // }
-
   register() {
     this.authService.register(this.registerDto).subscribe({
       next: (jwtDTO) => {
         localStorage.setItem('jwtToken', jwtDTO.token);
-        this.router.navigate(['/products']); // Redirect to the dashboard or any other page
+        this.router.navigate(['/login']);
       },
       error: (err) => {
         console.error('Register failed', err);
-        // Handle the error (e.g., show an error message to the user)
+        this.loginFailed = true;
+        this.errorMessage = 'Não foi possível continuar com o cadastro. \n\n Entre em contato com o administrador.';
       }
     });
   }
 
   ngOnInit() {
-  }
 
+  }
 }

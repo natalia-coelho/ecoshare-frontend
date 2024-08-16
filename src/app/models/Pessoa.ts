@@ -5,9 +5,9 @@ import { Usuario } from "./Usuario";
 export class Pessoa {
     pessoaId: number;
     cpfCnpj: string;
-    nome: string;
-    sobrenome: string;
     emailContato: string;
+    telefoneContato: string;
+    dataNascimento: string;
     fotoPerfil?: Uint8Array;
     bio?: string;
     tituloPerfil?: string;

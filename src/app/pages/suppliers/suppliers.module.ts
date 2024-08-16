@@ -20,6 +20,10 @@ import { SupplierUpdateComponent } from './supplier-update/supplier-update.compo
     CommonModule,
     SuppliersRoutingModule,
     FormsModule
+  ],
+  exports: [
+    SupplierAddComponent,
+    SupplierDetailsComponent
   ]
 })
 export class SuppliersModule { }

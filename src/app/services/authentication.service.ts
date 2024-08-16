@@ -60,7 +60,7 @@ export class AuthenticationService {
     const token = localStorage.getItem('jwtToken');
     if (token) {
       const decodedToken = this.jwtHelper.decodeToken(token);
-      return decodedToken['username'];
+      return decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'];
     }
     return null;
   }

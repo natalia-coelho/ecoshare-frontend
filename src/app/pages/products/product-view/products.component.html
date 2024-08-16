@@ -11,7 +11,8 @@
                     recentes e descubra o que melhor combina com você.</p>
                 <a
                     [routerLink]="['/product-add']"
-                    class="btn btn-primary">Adicionar produtos</a>
+                    class="btn btn-primary"
+                    *ngIf="!isRoleNullOrClient()">Adicionar produtos</a>
             </div>
         </div>
     </div>

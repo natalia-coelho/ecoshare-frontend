@@ -3,7 +3,6 @@ import { Routes } from '@angular/router';
 import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
 import { IconsComponent } from '../../pages/icons/icons.component';
 import { MapsComponent } from '../../pages/maps/maps.component';
-import { UserProfileComponent } from '../../pages/user-profile/user-profile.component';
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { ProductsComponent } from 'src/app/pages/products/product-view/products.component';
 import { ProductDetailsComponent } from 'src/app/pages/products/product-details/product-details.component';
@@ -13,6 +12,7 @@ import { SupplierViewComponent } from 'src/app/pages/suppliers/supplier-view/sup
 import { SupplierAddComponent } from 'src/app/pages/suppliers/supplier-add/supplier-add.component';
 import { SupplierDetailsComponent } from 'src/app/pages/suppliers/supplier-details/supplier-details.component';
 import { SupplierUpdateComponent } from 'src/app/pages/suppliers/supplier-update/supplier-update.component';
+import { UserProfileComponent } from 'src/app/pages/user-profile/user-profile-view/user-profile.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pessoa } from 'src/app/models/Pessoa';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { PerfilService } from 'src/app/services/perfil.service';
 
 @Component({
@@ -14,13 +15,18 @@ export class UserProfileComponent implements OnInit {
   fotosCount = 0;
   avaliacoesCount = 0;
   idade: number;
+  userRole: string | null;
+  isEditing: boolean = false;
 
-  constructor(private perfilService: PerfilService) { }
+  constructor(private perfilService: PerfilService,
+    private authService: AuthenticationService) { }
 
   ngOnInit(): void {
+    this.userRole = this.authService.getRole();
     this.perfilService.getPerfil().subscribe(
       data => {
         this.pessoa = data;
+        this.pessoa.dataNascimento = this.formatarDataNascimento();
         this.idade = this.calculaIdade(this.pessoa.usuario?.dataNascimento);
         // Implementar métodos que atualizam os contadores.
       },
@@ -45,5 +51,18 @@ export class UserProfileComponent implements OnInit {
       error => console.error(error)
     );
   }
-}
 
+  isRoleNullOrClient(): boolean {
+    return this.userRole === 'CLIENTE' || this.userRole === null;
+  }
+
+  private formatarDataNascimento(): string {
+    if (this.pessoa?.dataNascimento) {
+      const data = new Date(this.pessoa.dataNascimento);
+      const ano = data.getFullYear();
+      const mes = ('0' + (data.getMonth() + 1)).slice(-2);
+      const dia = ('0' + data.getDate()).slice(-2);
+      return `${ano}-${mes}-${dia}`;
+    }
+  }
+}

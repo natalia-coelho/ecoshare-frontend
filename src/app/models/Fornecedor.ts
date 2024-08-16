@@ -10,6 +10,8 @@ export class Fornecedor {
     imagemUrl?: string;
     usuario?: Usuario;
     usuarioId?: number;
+    whatsappUrl?: 'https://api.whatsapp.com/';
+    instagramUrl?: 'https://www.instagram.com/';
 }
 
 export enum TipoPessoa {

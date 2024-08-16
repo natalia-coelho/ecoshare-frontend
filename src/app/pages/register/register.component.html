@@ -26,16 +26,53 @@
             <small>Cadastre-se com as credenciais</small>
           </div>
           <form role="form" novalidate>
+            <!-- Nome e Sobrenome -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i
+                        class="ni ni-align-left-2"></i></span>
+                  </div>
+                  <input [(ngModel)]="registerDto.nome" class="form-control"
+                    placeholder="Nome" type="text" required>
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i
+                        class="ni ni-align-left-2"></i></span>
+                  </div>
+                  <input [(ngModel)]="registerDto.sobrenome"
+                    class="form-control"
+                    placeholder="Sobrenome" type="text" required>
+                </div>
+              </div>
+            </div>
+            <!-- Nome de Usuário -->
             <div class="form-group">
               <div class="input-group input-group-alternative mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i
-                      class="ni ni-hat-3"></i></span>
+                      class="ni ni-single-02"></i></span>
                 </div>
                 <input [(ngModel)]="registerDto.username" class="form-control"
-                  placeholder="Nome" type="text" required>
+                  placeholder="Nome de Usuário" type="text" required>
               </div>
             </div>
+            <!-- Número de Celular -->
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i
+                      class="ni ni-mobile-button"></i></span>
+                </div>
+                <input [(ngModel)]="registerDto.telefone" class="form-control"
+                  placeholder="Número de Celular" type="tel" required>
+              </div>
+            </div>
+            <!-- Email -->
             <div class="form-group">
               <div class="input-group input-group-alternative mb-3">
                 <div class="input-group-prepend">
@@ -46,16 +83,7 @@
                   placeholder="Email" type="email" required>
               </div>
             </div>
-            <div class="form-group">
-              <div class="input-group input-group-alternative mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i
-                      class="ni ni-calendar-grid-58"></i></span>
-                </div>
-                <input [(ngModel)]="registerDto.birthdate" class="form-control"
-                  placeholder="Data de Nascimento" type="date" required>
-              </div>
-            </div>
+            <!-- Senha -->
             <div class="form-group">
               <div class="input-group input-group-alternative mb-3">
                 <div class="input-group-prepend">
@@ -66,6 +94,7 @@
                   placeholder="Senha" type="password" required>
               </div>
             </div>
+            <!-- Confirmação da Senha -->
             <div class="form-group">
               <div class="input-group input-group-alternative mb-3">
                 <div class="input-group-prepend">
@@ -77,6 +106,7 @@
                   type="password" required>
               </div>
             </div>
+            <!-- Seleção de Papel -->
             <div class="form-group">
               <div class="input-group input-group-alternative mb-3">
                 <div class="input-group-prepend">
@@ -85,17 +115,13 @@
                 </div>
                 <select [(ngModel)]="registerDto.role" class="form-control"
                   required placeholder="Selecione um papel">
-                  <option value disabled selected>Selecione um
-                    papel</option>
-                  <option value="1">Cliente</option>
-                  <option value="2">Fornecedor</option>
+                  <option value disabled selected>Selecione um papel</option>
+                  <option value=1>Cliente</option>
+                  <option value=2>Fornecedor</option>
                 </select>
               </div>
             </div>
-            <!-- <div class="text-muted font-italic">
-              <small>força da senha: <span
-                  class="text-success font-weight-700">forte</span></small>
-            </div> -->
+            <!-- Termos e Condições -->
             <div class="row my-4">
               <div class="col-12">
                 <div
@@ -109,10 +135,14 @@
                 </div>
               </div>
             </div>
+            <!-- Botão de Registro -->
             <div class="text-center">
               <button type="button" class="btn btn-primary mt-4"
-                (click)="register()">Criar
-                conta</button>
+                (click)="register()">Criar conta</button>
+            </div>
+            <!-- Mensagem de Erro -->
+            <div *ngIf="loginFailed" class="error-message mt-3 text-center">
+              {{ errorMessage }}
             </div>
           </form>
         </div>
